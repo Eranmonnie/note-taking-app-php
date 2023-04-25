@@ -1,3 +1,4 @@
 <?php
-$heading ="Notes";
+$heading ="My Notes";
+
 require "views/notes.view.php";
