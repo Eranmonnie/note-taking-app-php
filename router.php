@@ -10,7 +10,7 @@ $routes = [
     "/note"=> "controllers/note.controller.php",
 ];
 
-function abort($code){
+function abort($code = 404){
     http_response_code($code);
     require "views/{$code}.php";
     die();
@@ -21,7 +21,7 @@ function setRout($uri, $routes){
         require $routes[$uri];
     }
     else{
-        abort(404);
+        abort();
     }
 }
 
