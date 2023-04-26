@@ -10,7 +10,7 @@ $routes = [
     "/note"=> "controllers/note.controller.php",
 ];
 
-function abort($code = 404){
+function abort($code = Response::NOT_FOUND){
     http_response_code($code);
     require "views/{$code}.php";
     die();
