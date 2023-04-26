@@ -9,10 +9,12 @@
 <style>
         body{  
             margin: 0;
+            padding: 0;
             font-family: sans-serif;
         }
 
         .navstyle{
+            padding-inline-start: 0px;
             display:flex;
             justify-content: center;
             gap: 5em;
