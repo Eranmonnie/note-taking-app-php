@@ -4,6 +4,7 @@
  class Database{
 
    public $connection;
+   public $statement;
 
     public function __construct($config ,$username = 'root', $password = 'eranmonnie'){
        //use http build query for making connection string 
@@ -14,13 +15,37 @@
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
        ]);
     } 
+  
     
-
     public function query($query, $id = []){
         
-        $statement = $this->connection->prepare($query);
-        $statement->execute($id);
-        return $statement;
+        $this->statement = $this->connection->prepare($query);
+        $this->statement->execute($id);
+       return $this;
+    }
+
+    public function fetchall(){
+        $result = $this->statement->fetchAll();
+
+        if (! $result){
+            abort();
+        };
+        
+        return $result;
+    }
+
+    public function fetch(){
+        return $this->statement->fetch();
+    }
+
+    public function fetchorFail(){
+        $result  = $this->fetch();
+
+        if (! $result){
+            abort();
+        }
+
+        return $result;
     }
 }
 

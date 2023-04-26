@@ -5,15 +5,11 @@ $db = new Database($config['database'] );
 
 $id = $_GET['id'];
 $query = 'select * from notes where id = ?';
-$note = $db->query($query, [$id])->fetch();
+//handels failed query  "what if user accesses data that dosent exis"
+$note = $db->query($query, [$id])->fetchorFail();
 
-//what if user accesses data that dosent exist 
-if (!$note){
-    abort();
-}
 //we havent reviewed sessions but if we were to secure a page from autenticate users we would have to match the logged in users id with ehr user_id foreign key in the notes table leta=s say the logged in user has an id of 3
-if ($note['user_id'] !== 3){
-    abort(Response::FOBIDDEN);
-}
+authorize($note['user_id'] === 3);
+
 
 require "views/note.view.php";
