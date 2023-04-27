@@ -1,6 +1,7 @@
 <?php
 $heading = "create";
 $config = require "config.php";
+require "Validate.php";
 $db = new Database($config['database'] );
 
 $err = [];
@@ -10,14 +11,9 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
     $body = $_POST['body'];
     $id = 3;
 
-    if (strlen($body) === 0){
-        $err['body'] = "A body is required";
+    if (! Validate::string($body, 1, 1000)){
+        $err['body'] = "A body of no more than 1000 characters is required";
     }
-
-    if (strlen($body) > 1000){
-        $err['body'] = "The body cannot be more than 1000 characters";
-    }
-
 
     if (empty(($err))){
 
