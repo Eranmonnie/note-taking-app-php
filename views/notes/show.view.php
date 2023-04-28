@@ -1,6 +1,6 @@
 
 
-<?php require "partials/header.php"?>
+<?php require "views/partials/header.php"?>
 
  <h1>NOTE</h1>   
  <p><?= htmlspecialchars($note['notes'])?></p>  

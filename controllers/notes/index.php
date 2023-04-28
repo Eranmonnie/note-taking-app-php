@@ -5,4 +5,4 @@ $db = new Database($config['database'] );
 
 $notes = $db->query('select * from notes where user_id = 3')->fetchall();
 
-require "views/notes.view.php";
+require "views/notes/index.view.php";

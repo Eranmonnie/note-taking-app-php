@@ -1,7 +1,7 @@
 <?php
 return [
     "/"=> "controllers/home.controller.php",
-    "/notes"=> "controllers/notes.controller.php",
-    "/notes/note-create" => "controllers/note-create.controller.php",
-    "/note"=> "controllers/note.controller.php",
+    "/notes"=> "controllers/notes/index.php",
+    "/notes/note-create" => "controllers/notes/create.controller.php",
+    "/note"=> "controllers/notes/show.php",
 ];

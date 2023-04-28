@@ -12,4 +12,4 @@ $note = $db->query($query, [$id])->fetchorFail();
 authorize($note['user_id'] === 3);
 
 
-require "views/note.view.php";
+require "views/notes/show.view.php";
