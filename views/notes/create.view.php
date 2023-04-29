@@ -1,4 +1,4 @@
-<?php require "views/partials/header.php";
+<?php require base_path("views/partials/header.php");
 ?>
 
 <h1>Create Note</h1>

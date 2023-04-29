@@ -1,6 +1,6 @@
 <?php
  $heading = '404 Page Not Found';
- require "partials/header.php";
+ require base_path("partials/header.php");
 
 ?>
 

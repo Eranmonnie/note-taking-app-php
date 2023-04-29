@@ -1,6 +1,6 @@
 <?php
 $heading ="Note";
-$config = require "config.php";
+$config = require base_path("config.php");
 $db = new Database($config['database'] );
 
 $id = $_GET['id'];
@@ -12,4 +12,7 @@ $note = $db->query($query, [$id])->fetchorFail();
 authorize($note['user_id'] === 3);
 
 
-require "views/notes/show.view.php";
+view("notes/show.view.php", [
+    "heading" => $heading,
+    "note"=> $note,
+]);//loads views  

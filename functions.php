@@ -19,3 +19,13 @@ function authorize($statement, $status = Response::FOBIDDEN){
         abort($status);
     }
 }
+
+function base_path($value){
+    return BASE_PATH. $value;
+
+}
+
+function view($value, $content = []){
+    extract($content);
+    require base_path('views/'. $value);
+}
