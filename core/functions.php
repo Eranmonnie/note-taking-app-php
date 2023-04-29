@@ -7,7 +7,7 @@ function abort($code = Response::NOT_FOUND){
 
 function setRout($uri, $routes){
     if (array_key_exists($uri, $routes)){
-        require $routes[$uri];
+        require base_path($routes[$uri]);
     }
     else{
         abort();
