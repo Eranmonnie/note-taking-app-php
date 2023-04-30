@@ -1,6 +1,10 @@
 <?php
 //connect to our db
 //database class
+//namespace
+namespace core;
+//ude sxternam classes 
+use PDO;
  class Database{
 
    public $connection;

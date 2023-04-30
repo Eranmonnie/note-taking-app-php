@@ -1,4 +1,9 @@
 <?php
+
+//allows us touse coe\Database
+use core\Database;
+use core\Validate;
+
 $heading = "create";
 $config = require base_path("config.php");
 require base_path("core/Validate.php");

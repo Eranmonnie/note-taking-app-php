@@ -1,4 +1,7 @@
 <?php
+
+use core\Database;
+
 $heading ="My Notes";
 $config = require base_path("config.php");
 $db = new Database($config['database'] );

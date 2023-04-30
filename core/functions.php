@@ -1,4 +1,7 @@
 <?php
+
+use core\Response;
+
 function abort($code = Response::NOT_FOUND){
     http_response_code($code);
     require "views/{$code}.php";
