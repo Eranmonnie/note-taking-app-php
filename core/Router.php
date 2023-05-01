@@ -4,40 +4,27 @@ namespace core;
 class Router{
     protected $routes ;
 
-    public function GET($uri, $controller){
+    public function add($uri, $controller , $method){
         $this->routes[]=[
             'uri'=> $uri,
             'controller'=> $controller,
-            'method'=> 'GET',
+            'method'=> $method,
         ];
+    }
+    public function GET($uri, $controller){
+         $this->add($uri, $controller, 'GET');
     }
     public function POST($uri, $controller){
-        $this->routes[]=[
-            'uri'=> $uri,
-            'controller'=> $controller,
-            'method'=> 'POST',
-        ];
+        $this->add($uri, $controller, 'POST');
     }
     public function DELETE($uri, $controller){
-        $this->routes[]=[
-            'uri'=> $uri,
-            'controller'=> $controller,
-            'method'=> 'DELETE',
-        ];
+        $this->add($uri, $controller, "DELETE");
     }
     public function PUT($uri, $controller){
-        $this->routes[]=[
-            'uri'=> $uri,
-            'controller'=> $controller,
-            'method'=>'PUT',
-        ];
+        $this->add($uri, $controller, 'PUT');
     }
     public function PATCH($uri, $controller){
-        $this->routes[]=[
-            'uri'=> $uri,
-            'controller'=> $controller,
-            'method'=> 'PATCH',
-        ];
+        $this->add($uri, $controller, 'PATCH');
     }
 
 public function route($uri, $method){
