@@ -25,6 +25,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
         $notes = $db->query('INSERT INTO notes (notes, user_id) VALUES (?, ?)',[
             $body,$id
          ]); 
+         header('location: /notes');
+         exit();
     }
      
 }

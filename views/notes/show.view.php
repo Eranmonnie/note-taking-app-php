@@ -7,6 +7,7 @@
 
  <!-- Delete -->
  <form action="/note" method="POST">
+    <input type="hidden" name = "__method" value="DELETE">
     <input type="hidden" name = "id" value="<?=$note['id']?>">
     <button>Delete</button>
  </form>
