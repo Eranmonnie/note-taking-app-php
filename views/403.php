@@ -1,6 +1,6 @@
 <?php
  $heading = '403 : Unauthorized Request';
- require base_path("partials/header.php");
+ require base_path("views/partials/header.php",);
 
 ?>
 
