@@ -7,7 +7,7 @@
 
  
  
- <div><a href="/notes/edit">Edit</a></div>
+ <div><a href="/notes/edit?id=<?=$note['id']?>">Edit</a></div>
  
  <!-- Delete -->
  <form action="/note" method="POST">
