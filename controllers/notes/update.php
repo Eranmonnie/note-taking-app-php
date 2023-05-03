@@ -22,7 +22,7 @@ if (! Validate::string($body, 1, 1000)){
 }
 
 if (! empty(($err))){
-    return view("notes/create.view.php", [
+    return view("notes/edit.view.php", [
         "heading" => $heading,
         "err" =>$err,
         "note" =>$note,

@@ -13,7 +13,7 @@
 <div class="error" style="color: red; font-size: small;">
     <?php if (isset($err['body']) ) :?>
         <p><?=$err['body'] ?></p>
-    <?php endif; ?>
+    <?php endif; ?> 
 
 </div>
 <div style="display:flex; justify-content:right;"><button style="margin-top:0.5em;text-align:center;padding:0.5em;  background-color: #ff1e00; border: none; width: 6em; border-radius:0.5em;">Update</button></div> 
