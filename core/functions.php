@@ -15,7 +15,7 @@ function authorize($statement, $status = Response::FOBIDDEN){
 }
 
 function base_path($value){
-    return BASE_PATH. $value;
+    return BASE_PATH . $value;
 
 }
 

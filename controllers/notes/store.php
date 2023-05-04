@@ -13,7 +13,7 @@ $err = [];
 
    
 $body = $_POST['body'];
-$id = 3;
+$id = 14;
 
 if (! Validate::string($body, 1, 1000)){
     $err['body'] = "A body of no more than 1000 characters is required";

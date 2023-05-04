@@ -9,4 +9,6 @@ $Router->GET("/notes/edit","controllers/notes/edit.php")->only('auth');
 $Router->PATCH("/notes/edit","controllers/notes/update.php")->only('auth');
 $Router->GET("/signup","controllers/auth/create.php")->only('guest');
 $Router->POST("/signup","controllers/auth/store.php")->only('guest');
+$Router->GET("/login","controllers/sessions/create.php")->only('guest');
+$Router->POST("/login","controllers/sessions/store.php")->only('guest');
 

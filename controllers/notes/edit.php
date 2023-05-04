@@ -4,7 +4,7 @@ use core\App;
 $heading = "Edit";
 $err = [];
 $db = App::resolve('core\Database');
-$user_id = 3;
+$user_id = 14;
 $id = $_GET['id'];
 
 $query = 'select * from notes where id = ?';

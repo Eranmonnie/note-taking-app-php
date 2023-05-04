@@ -1,9 +1,9 @@
 <?php
 
-$heading = "Signup";
+$heading = "Login";
 $err = [];
 
-view("auth/create.view.php", [
+view("sessions/create.view.php", [
     "heading" => $heading,
     "err" =>$err,
 ]);//loads views 

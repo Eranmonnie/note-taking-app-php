@@ -5,7 +5,7 @@ use core\App;
 use core\Validate;
 
 $db = App::resolve('core\Database');
-$user_id = 3;
+$user_id = 14;
 $err = [];
 $body = $_POST['body'];  
 $id = $_POST['id'];

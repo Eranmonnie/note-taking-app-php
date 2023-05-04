@@ -41,6 +41,8 @@
             
             <?php else :?>
 
+                <li> <a href="/notes/note-create">Create</a></li>
+
             <?php endif; ?>
         
 
