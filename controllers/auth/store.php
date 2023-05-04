@@ -44,7 +44,7 @@ if (! empty(($err))){
 }
 
 $User = $db->query("INSERT INTO users (name, email, password) VALUES (?, ?, ?)", [
-$name,$email,$password]);
+$name,$email, password_hash($password, PASSWORD_BCRYPT)]);
 
 $_SESSION['user'] =[
     'email'=> $email
