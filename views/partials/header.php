@@ -28,7 +28,22 @@
 <body>
     <nav>
         <ul class="navstyle">
+
             <li><a href="/">Home</a></li>
+
             <li><a href="/notes">Notes</a></li>
+
+            <?php if (! isset($_SESSION['user'])) : ?>
+
+            <li> <a href="/signup">Signup</a></li>
+
+            <li><a href="/login">Login</a></li>
+            
+            <?php else :?>
+
+            <?php endif; ?>
+        
+
+            
         </ul>
     </nav>

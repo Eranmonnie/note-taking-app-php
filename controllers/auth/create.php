@@ -1,4 +1,11 @@
 <?php
+
+
+if (isset($_SESSION['user'])){
+    header('location: /'); 
+    exit();
+}
+
 $heading = "Signup";
 $err = [];
 
