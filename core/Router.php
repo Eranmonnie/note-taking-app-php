@@ -1,5 +1,8 @@
 <?php
 namespace core;
+use core\middleware\Guest;
+use core\middleware\Auth;
+
 
 class Router{
     protected $routes ;
@@ -42,19 +45,11 @@ public function route($uri, $method){
 
             //check if middleware exists
             if ($routes['middleware']=== 'auth'){
-
-                if (! isset($_SESSION['user'])){
-                    header('location: /');
-                    exit();
-                }
+                (new Auth)->handel();
             }
 
             if ($routes['middleware']=== 'guest'){
-                
-                if (isset($_SESSION['user'])){
-                    header('location: /');
-                    exit();
-                }
+                (new Guest)->handel();
             }
 
             return require base_path($routes['controller']);
