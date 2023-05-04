@@ -9,28 +9,54 @@ class Router{
             'uri'=> $uri,
             'controller'=> $controller,
             'method'=> $method,
+            'middleware'=> null,
         ];
+
+        return $this;
     }
     public function GET($uri, $controller){
-         $this->add($uri, $controller, 'GET');
+         return $this->add($uri, $controller, 'GET');
     }
     public function POST($uri, $controller){
-        $this->add($uri, $controller, 'POST');
+       return  $this->add($uri, $controller, 'POST');
     }
     public function DELETE($uri, $controller){
-        $this->add($uri, $controller, "DELETE");
+        return $this->add($uri, $controller, "DELETE");
     }
     public function PUT($uri, $controller){
-        $this->add($uri, $controller, 'PUT');
+        return $this->add($uri, $controller, 'PUT');
     }
     public function PATCH($uri, $controller){
-        $this->add($uri, $controller, 'PATCH');
+        return $this->add($uri, $controller, 'PATCH');
+    }
+    public function only($key){
+        //when only is tacklled it appends to the last data put in the array
+        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
+
     }
 
 public function route($uri, $method){
 
     foreach($this->routes as $routes){
         if ($routes['uri'] === $uri && $routes['method'] === strtoupper($method)){
+
+            //check if middleware exists
+            if ($routes['middleware']=== 'auth'){
+
+                if (! isset($_SESSION['user'])){
+                    header('location: /');
+                    exit();
+                }
+            }
+
+            if ($routes['middleware']=== 'guest'){
+                
+                if (isset($_SESSION['user'])){
+                    header('location: /');
+                    exit();
+                }
+            }
+
             return require base_path($routes['controller']);
         }
     }
