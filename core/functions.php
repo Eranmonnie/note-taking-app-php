@@ -23,3 +23,14 @@ function view($value, $content = []){
     extract($content);
     require base_path('views/'. $value);
 }
+function logout(){
+
+    $_SESSION = []; 
+    session_destroy();
+
+    $session = session_get_cookie_params();
+    setcookie('PHPSESSID', '', time() -3600, $session['path'], $session['domain'], $session['secure'], $session['httponly']);
+}
+
+//for login function
+//session_regenerate_id(true);

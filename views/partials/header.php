@@ -31,7 +31,11 @@
 
             <li><a href="/">Home</a></li>
 
+            <?php if (isset($_SESSION['user'])) : ?>
+
             <li><a href="/notes">Notes</a></li>
+            
+            <?php endif; ?>
 
             <?php if (! isset($_SESSION['user'])) : ?>
 
@@ -42,6 +46,8 @@
             <?php else :?>
 
                 <li> <a href="/notes/note-create">Create</a></li>
+                <form action="/login" method="POST"> <input type="hidden" name="__method" value="DELETE"> <button> Logout</button></form>
+                <!-- make form later  -->
 
             <?php endif; ?>
         
