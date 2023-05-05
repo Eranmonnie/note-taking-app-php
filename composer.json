@@ -6,13 +6,23 @@
             "email": "ajalaferanmi123@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/collections": "^10.9"
+    },
 
     "autoload": {
 
         "psr-4": {
             "core\\": "core/",
             "http\\": "http"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.6"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
